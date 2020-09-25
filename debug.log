@@ -1,0 +1,20 @@
+[0919/103153.905:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/103154.499:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/112605.431:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/112605.433:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/112612.213:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/112612.469:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/112947.643:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0919/114202.514:ERROR:registration_protocol_win.cc(103)] CreateFile: The system cannot find the file specified. (0x2)
+[0924/232115.376:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0924/232115.376:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0924/232115.380:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0924/232115.380:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0924/232115.380:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0924/232115.380:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0924/232115.379:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0924/232115.381:ERROR:exception_snapshot_win.cc(99)] thread ID 16676 not found in process
+[0924/232115.381:ERROR:exception_snapshot_win.cc(99)] thread ID 13164 not found in process
+[0924/232115.381:ERROR:exception_snapshot_win.cc(99)] thread ID 6708 not found in process
+[0924/232115.414:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0924/232115.414:ERROR:exception_snapshot_win.cc(99)] thread ID 12208 not found in process
