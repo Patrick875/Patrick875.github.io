@@ -19,7 +19,7 @@ export default function Showcase() {
 				setBgimage(images[images.indexOf(bgImage) + 1]);
 			}
 		}, 7000);
-	}, [bgImage]);
+	});
 
 	return (
 		<div
