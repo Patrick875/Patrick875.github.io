@@ -2,6 +2,7 @@
 
 import React from "react";
 import DataElement from "./../general/DataElement";
+import { Link } from "react-router-dom";
 export default function KeyLabour() {
 	let nfObject = new Intl.NumberFormat("en-US");
 	const population = {
@@ -43,6 +44,14 @@ export default function KeyLabour() {
 				by all the gases and particles in the air. Blue light is scattered more
 				than the other colors because it travels as shorter, smaller waves. This
 				is why we see a blue sky most of the time.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 			<DataElement
 				title={{
@@ -52,25 +61,65 @@ export default function KeyLabour() {
 				It's really hot inside Jupiter! No one knows exactly how hot, but
 				scientists think it could be about 43,000°F (24,000°C) near Jupiter's
 				center, or core.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 			<DataElement title={{ title: minWage.title, number: minWage.number }}>
 				It's really hot inside Jupiter! No one knows exactly how hot, but
 				scientists think it could be about 43,000°F (24,000°C) near Jupiter's
 				center, or core.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 			<DataElement
 				title={{ title: hoursOfWork.title, number: hoursOfWork.number }}>
 				A black hole is an area of such immense gravity that nothing -- not even
 				light -- can escape from it.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 			<DataElement title={{ title: underU.title, number: underU.number }}>
 				A black hole is an area of such immense gravity that nothing -- not even
 				light -- can escape from it.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 			<DataElement
 				title={{ title: population.title, number: population.number }}>
 				A black hole is an area of such immense gravity that nothing -- not even
 				light -- can escape from it.
+				<ul>
+					<li>
+						<Link to="#">read more</Link>
+					</li>
+					<li>
+						<Link to="#">source</Link>
+					</li>
+				</ul>
 			</DataElement>
 		</div>
 	);

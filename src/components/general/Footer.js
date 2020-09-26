@@ -1,6 +1,6 @@
 //jshint esversion:9
 import React from "react";
-import logo from "./../../images/LMIS Blue (1).png";
+import logo from "./../../images/LMIS-LOGO.png";
 import fcbkIcon from "./../../images/icons/iconmonstr-facebook-3-240.png";
 import twitterIcon from "./../../images/icons/iconmonstr-twitter-1-240.png";
 import linkedinIcon from "./../../images/icons/iconmonstr-linkedin-3-240.png";
@@ -10,7 +10,7 @@ export default function Footer() {
 		<div className="footer">
 			<div className="footer-top">
 				<div className="footer-logo">
-					<img src={logo} alt="LMIS logo" />
+					<img src={logo} alt="LMIS logo" height="120" width="200" />
 				</div>
 				<div className="footer-icons">
 					<img src={fcbkIcon} alt="facebook icon" width="30" height="30" />

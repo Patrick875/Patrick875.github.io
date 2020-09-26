@@ -9,7 +9,6 @@ import LbIndicators from "./components/pages/LbIndicators";
 import Resources from "./components/pages/Resources";
 import LoginForm from "./components/general/LoginForm";
 import SignUp from "./components/general/SignUp";
-
 function App() {
 	return (
 		<div className="App">

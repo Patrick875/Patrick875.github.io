@@ -27,7 +27,7 @@
 
 h3 {
 	text-align: center;
-	margin: 2em 0
+	margin: 1em 0
 }
 
 a {
@@ -76,10 +76,19 @@ a {
 	padding-left: 12em;
 }
 
+
 .showcase {
-	background-image: url("./images//pexels-picha-stock-3894378.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+	display: grid;
+	grid-template-columns: .3fr 4fr .3fr;
+}
+
+.showcase p {
+	align-self: center;
+	justify-self: center;
+}
+
+.showcase p:hover {
+	cursor: pointer;
 }
 
 .showcase-front {
@@ -170,6 +179,16 @@ a {
 .accordion-item.collapsed {
 	max-height: 0;
 	transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.accordion-content {
+	padding: 1em;
+}
+
+.accordion-content li a {
+	padding: 1em;
+	color: black;
+	text-decoration: underline;
 }
 
 .accordion-title {

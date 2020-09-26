@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import DataElement from "../general/DataElement";
 import InfoTile from "../general/InfoTile";
 import Showcase from "../general/Showcase";
-import icon from "./../../images/icons/iconmonstr-user-29 (2).svg";
+import populationIcon from "./../../images/icons/group.png";
+import unemployRateIcon from "./../../images/icons/job.png";
+import hoursOfWorkIcon from "./../../images/icons/working.png";
+import underUIcon from "./../../images/icons/human-resources.png";
+import minWageIcon from "./../../images/icons/save-money.png";
+
 import upIcon from "./../../images/icons/iconmonstr-arrow-74-240.png";
 import downIcon from "./../../images/icons/iconmonstr-arrow-73-240.png";
 import KeyLabour from "../general/KeyLabour";
@@ -17,35 +22,35 @@ export default function Home() {
 		backgroundColorDown: "#B5056C",
 	};
 	const population = {
-		icon: icon,
+		icon: populationIcon,
 		number: nfObject.format(3589583),
 		title: "Population of Rwanda",
 		percentage: "+(0.34)",
 		date: "August 2020",
 	};
 	const unemploymentRateByAge = {
-		icon: icon,
+		icon: unemployRateIcon,
 		number: nfObject.format(3589583),
 		title: "Unemployment Rate By Age",
 		percentage: "-(0.34)",
 		date: "August 2020",
 	};
 	const minWage = {
-		icon: icon,
+		icon: minWageIcon,
 		number: `${nfObject.format(9.51)}%`,
 		title: "Minimum Wage",
 		percentage: "+(0.34)",
 		date: "August 2020",
 	};
 	const hoursOfWork = {
-		icon: icon,
+		icon: hoursOfWorkIcon,
 		number: nfObject.format(1589423),
 		title: "Hours of Work",
 		percentage: "-(0.34)",
 		date: "August 2020",
 	};
 	const underU = {
-		icon: icon,
+		icon: underUIcon,
 		number: `${nfObject.format(57.0)}%`,
 		title: "Labour Under-utilization",
 		percentage: "+(0.34)",

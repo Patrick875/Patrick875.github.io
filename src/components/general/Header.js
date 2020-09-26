@@ -1,6 +1,6 @@
 //jshint esversion:9
 import React from "react";
-import logo from "./../../images/LMIS Blue (1).png";
+import logo from "./../../images/LMIS-LOGO.png";
 import { Link } from "react-router-dom";
 export default function () {
 	return (
@@ -8,7 +8,7 @@ export default function () {
 			<div className="header_top">
 				<div className="header_top_logo">
 					<Link to="/">
-						<img src={logo} />
+						<img src={logo} height="80" width="160" />
 					</Link>
 				</div>
 				<div className="header_top_links">
@@ -19,7 +19,13 @@ export default function () {
 						<Link to="/signup">
 							<li>SIGNUP</li>
 						</Link>
-						<li>English</li>
+						<li>
+							<select name="cars" id="cars" style={{ border: "none" }}>
+								<option value="english">English</option>
+								<option value="french">French</option>
+								<option value="Ikinyarwanda">Ikinyarwanda</option>
+							</select>
+						</li>
 					</ul>
 				</div>
 			</div>
