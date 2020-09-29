@@ -27,7 +27,7 @@
 
 h3 {
 	text-align: center;
-	margin: 1em 0
+	margin: 1em 0;
 }
 
 a {
@@ -76,10 +76,9 @@ a {
 	padding-left: 12em;
 }
 
-
 .showcase {
 	display: grid;
-	grid-template-columns: .3fr 4fr .3fr;
+	grid-template-columns: 0.3fr 4fr 0.3fr;
 }
 
 .showcase p {
@@ -231,9 +230,8 @@ a {
 }
 
 .footer {
-
 	display: grid;
-	grid-template-rows: 1fr .2fr;
+	grid-template-rows: 1fr 0.2fr;
 	background-color: #035b99;
 	color: white;
 	margin-top: 4em;
@@ -241,7 +239,7 @@ a {
 
 .footer-top {
 	display: grid;
-	grid-template-columns: .5fr .5fr;
+	grid-template-columns: 0.5fr 0.5fr;
 	align-items: center;
 	padding: 2em 6em;
 }
@@ -251,7 +249,7 @@ a {
 }
 
 .footer-icons img {
-	padding: 0 .4em;
+	padding: 0 0.4em;
 }
 
 .footer-bottom {
@@ -273,12 +271,11 @@ a {
 
 .labour-indic {
 	display: grid;
-	grid-template-rows: .1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr;
 }
 
 .labour-indic-nav {
 	justify-self: center;
-
 }
 
 .docs,
@@ -311,10 +308,10 @@ a {
 .case-studies div,
 .graphs div {
 	border: 1px solid rgba(153, 153, 153, 0.349);
-	border-radius: .8em;
+	border-radius: 0.8em;
 	text-align: center;
 	background-color: rgb(255, 255, 255);
-	width: 50%
+	width: 50%;
 }
 
 .resources {
@@ -348,7 +345,6 @@ a {
 	border: none;
 	border-bottom: 1px solid #000000;
 	outline: none;
-
 }
 
 .login-inp:focus {
@@ -366,5 +362,5 @@ label {
 	outline: none;
 	text-align: center;
 	justify-self: end;
-	background-color: #2699FB;
+	background-color: #2699fb;
 }
