@@ -76,10 +76,11 @@ a {
 	padding-left: 12em;
 }
 
+/* 
 .showcase {
 	display: grid;
 	grid-template-columns: 0.3fr 4fr 0.3fr;
-}
+} */
 
 .showcase p {
 	align-self: center;

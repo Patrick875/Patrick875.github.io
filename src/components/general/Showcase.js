@@ -19,13 +19,13 @@ export default function Showcase() {
 				setBgimage(images[images.indexOf(bgImage) + 1]);
 			}
 		}, 7000);
-	}, [bgImage]);
+	});
 
 	return (
 		<div
 			className="showcase"
 			style={{
-				backgroundImage: `url(${bgImage})`,
+				backgroundImage: `url(${backg1})`,
 				backgroundSize: "cover",
 				backgroundRepeat: "no-repeat",
 				transition: ".8s ease-in-out",
