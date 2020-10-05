@@ -8,6 +8,8 @@ import unemployRateIcon from "./../../images/icons/job.png";
 import hoursOfWorkIcon from "./../../images/icons/working.png";
 import underUIcon from "./../../images/icons/human-resources.png";
 import minWageIcon from "./../../images/icons/save-money.png";
+import { Timeline } from "react-twitter-widgets";
+import { Tweet } from "react-twitter-widgets";
 
 import upIcon from "./../../images/icons/iconmonstr-arrow-74-240.png";
 import downIcon from "./../../images/icons/iconmonstr-arrow-73-240.png";
@@ -69,9 +71,25 @@ export default function Home() {
 					<InfoTile data={underU} statusIcon={statusIcons} />
 				</div>
 			</div>
-			<h3>KEY LABOUR INDICATORS</h3>
-			<KeyLabour />
-			<KeyLabour />
+
+			<div className="body">
+				<div className="body-left">
+					<KeyLabour />
+					<KeyLabour />
+				</div>
+				<div className="body-right">
+					<Timeline
+						dataSource={{
+							sourceType: "profile",
+							screenName: "TwitterDev",
+						}}
+						options={{
+							height: "100%",
+						}}
+					/>
+					<Tweet tweetId="841418541026877441" />
+				</div>
+			</div>
 		</div>
 	);
 }
@@ -81,3 +99,20 @@ export default function Home() {
 //Minimum wage:9.51%
 //hours of work:1,589,423
 //labour under-utilization:57.0%
+// <Showcase />;
+
+// Timeline (with options)
+// <Timeline
+//   dataSource={{
+//     sourceType: 'profile',
+//     screenName: 'TwitterDev'
+//   }}
+//   options={{
+//     height: '400'
+//   }}
+// />
+
+// // Tweet (without options)
+// <Tweet tweetId="841418541026877441" />
+
+// <h3>KEY LABOUR INDICATORS</h3>;

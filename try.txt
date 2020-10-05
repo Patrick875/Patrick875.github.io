@@ -1,0 +1,48 @@
+<Carousel showThumbs="" showStatus="" dynamicHeight="" infiniteLoop={true}>
+			<div>
+				<div className="crazy-crazy">
+					<img src={backg1} />
+				</div>
+				<div>
+					<p>>okay</p>
+				</div>
+			</div>
+			<div>
+				<div className="crazy-crazy">
+					<img src={backg2} />
+				</div>
+			</div>
+			<div>
+				<div className="crazy-crazy">
+					<img src={backg3} />
+				</div>
+			</div>
+		</Carousel>
+
+
+<Carousel
+				interval="4500"
+				showThumbs=""
+				showStatus=""
+				dynamicHeight=""
+				autoPlay={true}
+				transitionTime="400"
+				infiniteLoop={true}
+				width="100%"
+				className="not-funny">
+				<div>
+					<div className="crazy-crazy ">
+						<img src={backg1} className="cool-img  " />
+					</div>
+				</div>
+				<div>
+					<div className="crazy-crazy">
+						<img src={backg2} className="cool-img" style={{ width: "100%" }} />
+					</div>
+				</div>
+				<div>
+					<div className="crazy-crazy">
+						<img src={backg3} className="cool-img" />
+					</div>
+				</div>
+			</Carousel>

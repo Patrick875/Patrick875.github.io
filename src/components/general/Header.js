@@ -1,6 +1,6 @@
 //jshint esversion:9
 import React from "react";
-import logo from "./../../images/LMIS-LOGO.png";
+import logo from "./../../images/SNOWWHITE LMIS copy.png";
 import { Link } from "react-router-dom";
 export default function () {
 	return (
@@ -8,7 +8,7 @@ export default function () {
 			<div className="header_top">
 				<div className="header_top_logo">
 					<Link to="/">
-						<img src={logo} height="80" width="160" />
+						<img src={logo} height="120" width="120" />
 					</Link>
 				</div>
 				<div className="header_top_links">
