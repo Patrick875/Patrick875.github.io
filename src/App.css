@@ -1,9 +1,5 @@
 /*---------------- MEDIA QUERIES---------- */
 
-
-
-
-
 .App {
 	margin: 0;
 	padding: 0;
@@ -203,6 +199,10 @@ a {
 	width: 46%
 }
 
+.labour-indic a {
+	color: black
+}
+
 .accordion-item {
 	overflow: hidden;
 	transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
@@ -338,11 +338,48 @@ a {
 
 .labour-indic {
 	display: grid;
-	grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr;
+	/* grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr; */
 }
 
-.labour-indic-nav {
-	justify-self: center;
+.labour-indic-tabs {
+	text-align: center;
+	font-weight: 800;
+	border: 1px solid black;
+	margin: 2em 8em;
+	padding: 2em 0;
+}
+
+.summary-nav li {
+	display: block;
+	padding: .4em 0;
+}
+
+.summary {
+	margin: 2em 8em;
+	text-align: left;
+}
+
+.ol {
+	list-style-position: inside;
+	list-style: decimal;
+}
+
+.ordered-list li {
+
+	display: block;
+	padding: .5em;
+}
+
+.summary li a {
+	display: block;
+	text-align: left;
+	padding: .2em 0;
+	text-decoration: underline;
+}
+
+.summary p {
+	text-align: left;
+	margin: 2em 0;
 }
 
 .docs,

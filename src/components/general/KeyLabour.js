@@ -3,7 +3,7 @@
 import React from "react";
 import DataElement from "./../general/DataElement";
 import { Link } from "react-router-dom";
-export default function KeyLabour() {
+export default function KeyLabour(props) {
 	let nfObject = new Intl.NumberFormat("en-US");
 	const population = {
 		number: nfObject.format(3589583),
@@ -37,7 +37,7 @@ export default function KeyLabour() {
 	};
 	return (
 		<div className="key-labour">
-			<h3>POPULATION STATISTICS</h3>
+			<h3>{props.title}</h3>
 			<DataElement
 				title={{ title: population.title, number: population.number }}>
 				Sunlight reaches Earth's atmosphere and is scattered in all directions
