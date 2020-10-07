@@ -83,10 +83,24 @@ a {
 	padding-left: 12em;
 }
 
+.header select {
+	color: white;
+	background-color: #035b99;
+
+}
+
+/* 
+.header select option {
+	color: black !important
+} */
 
 .not-cool {
 	width: 100%;
 
+}
+
+.carousel-slider {
+	height: 30em;
 }
 
 /* .cool,
@@ -113,8 +127,6 @@ a {
 	color: white;
 	text-align: center;
 }
-
-.legend:hover {}
 
 .legend h1 {
 	padding: 1em 0 3em;
@@ -200,7 +212,7 @@ a {
 }
 
 .labour-indic a {
-	color: black
+	color: #333333
 }
 
 .accordion-item {
@@ -344,7 +356,7 @@ a {
 .labour-indic-tabs {
 	text-align: center;
 	font-weight: 800;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 	margin: 2em 8em;
 	padding: 2em 0;
 }
@@ -432,29 +444,64 @@ a {
 /* -------LOGIN PAGE------ */
 .login {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	height: 100%;
-	margin: 2em 2em;
+	height: 50em;
+	grid-template-columns: 1fr .6fr;
+	text-align: center;
+	margin: 0 8em;
 
 }
 
+.sign-up {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	color: #035b99;
+}
+
+.signup-text p {
+	font-weight: 500;
+	font-size: 40px;
+	text-align: center;
+	color: black;
+	margin: 4em 4em;
+}
+
+.sign-up .form-login {
+	margin: 0
+}
+
+.signup-text {
+	background-image: url('./images/signup-art.png');
+	background-size: cover;
+	background-position: center;
+}
+
 .login-info-side {
-	background-color: red;
+	/* background-color: red; */
+	background-image: url('./images/signin-art.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 3em 0;
 }
 
 .form-login {
 	display: grid;
-	/* justify-content: center; */
+	height: 70%;
+	margin: 3em 0;
+	color: #035b99;
+
 }
 
 .form-login .inputs {
-	display: grid;
-	justify-self: end;
-	height: 60%;
-	padding: 4em;
 	padding-top: 6em;
-	border: 3px solid rgba(153, 153, 153, 0.349);
-	/* margin: 1em; */
+	display: grid;
+	grid-gap: 0;
+	width: 60%;
+	justify-self: center;
+}
+
+.form-login h2 {
+	margin-bottom: 3em;
 }
 
 .form-login label {
@@ -477,15 +524,42 @@ label {
 	display: block;
 }
 
-.form-login button {
+.inputs button {
 	margin-top: 2em;
-	width: 6em;
-	height: 2.5em;
+	justify-self: center;
+	width: 50%;
 	outline: none;
 	text-align: center;
-	justify-self: end;
-	background-color: #2699fb;
+	border: 1.6px solid #ccc;
+	display: inline-block;
+	padding: 10px 16px;
+	cursor: pointer;
+	text-decoration: none;
+	background: transparent;
+	-webkit-transition: all 200ms ease;
+	transition: all 200ms ease;
+	border-radius: 8px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: relative;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	height: 40px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
 }
+
+/* -----------------CSS FOR SIGNUP----------------- */
+/* .inputs label[htmlFor='gender'] {
+	display: inline-block;
+	/* padding: 0 4px; */
+/* margin: 1em 0;
+	background: blue; */
+/* } */
+*/
 
 /* --------showcase burries-------------- */
 .crazy-crazy {

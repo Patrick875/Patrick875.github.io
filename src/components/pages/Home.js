@@ -74,8 +74,8 @@ export default function Home() {
 
 			<div className="body">
 				<div className="body-left">
-					<KeyLabour />
-					<KeyLabour />
+					<KeyLabour title="POPULATION STATISTICS" />
+					<KeyLabour title="EDUCATION STATISTICS" />
 				</div>
 				<div className="body-right">
 					<Timeline

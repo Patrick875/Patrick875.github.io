@@ -25,7 +25,7 @@ export default function Showcase() {
 	});
 
 	return (
-		<div className="not-cool container container-fluid">
+		<div className="not-cool">
 			<Carousel
 				interval="4500"
 				showThumbs=""

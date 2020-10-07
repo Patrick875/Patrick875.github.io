@@ -87,20 +87,22 @@ export default function LbSummary() {
 			<Link to="/resources">Get to the resources section right away</Link>
 			<p>How to get the most out data ?</p>
 			<ol className="ordered-list">
-				<li>Understand the indicators</li>
-				<li>Read what you need first</li>
+				<li>1. Understand the indicators</li>
+				<li>2. Read what you need first</li>
 				<li>
+					3.{" "}
 					<Link to="/signup" style={{ display: "inline" }}>
 						Take notes
 					</Link>
 				</li>
 				<li>
-					Compare different
+					4. Compare different
 					<Link to="/signup" style={{ display: "inline", padding: "0 .3em" }}>
 						Resources
 					</Link>
 				</li>
 				<li>
+					5.{" "}
 					<Link
 						to="/resources"
 						style={{ display: "inline", padding: "0 .3em 0 0" }}>
@@ -109,7 +111,7 @@ export default function LbSummary() {
 					for future reference
 				</li>
 				<li>
-					Upload data from your own
+					6. Upload data from your own
 					<Link to="/signup" style={{ display: "inline", padding: "0 .3em" }}>
 						findings
 					</Link>
