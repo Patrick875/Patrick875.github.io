@@ -84,15 +84,15 @@ a {
 }
 
 .header select {
-	color: white;
-	background-color: #035b99;
 
+	background-color: transparent;
+	color: white
 }
 
-/* 
+
 .header select option {
 	color: black !important
-} */
+}
 
 .not-cool {
 	width: 100%;
@@ -249,13 +249,13 @@ a {
 .accordion-title {
 	font-weight: 600;
 	cursor: pointer;
-	/* border-bottom: .3px solid; */
-	/* border-radius: 4px; */
+	border: 2px solid;
+	border-radius: 14px 0 14px 0;
 	border-style: solid;
 	border-color: #ccc;
 	padding: 0.5em 0.75em;
 	display: grid;
-	grid-template-columns: 0.5fr 0.5fr 0.2fr;
+	grid-template-columns: 0.8fr 0.4fr 0.3fr;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -482,6 +482,7 @@ a {
 	background-position: center;
 	background-repeat: no-repeat;
 	margin: 3em 0;
+
 }
 
 .form-login {
