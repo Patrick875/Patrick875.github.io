@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3bc49193f7c5fde0e3670f25785d645e",
+    "revision": "523b2ce23c4b6b0768c7eef18d3362b8",
     "url": "/lmis-clone/index.html"
   },
   {
-    "revision": "c72f9655c1ca32c86ef5",
+    "revision": "3fe9d3f85167d28c3b13",
     "url": "/lmis-clone/static/css/2.fb346933.chunk.css"
   },
   {
-    "revision": "66e79edd04ec4c3d8af1",
+    "revision": "d0630a221bd38a710ef2",
     "url": "/lmis-clone/static/css/main.e16681cc.chunk.css"
   },
   {
-    "revision": "c72f9655c1ca32c86ef5",
-    "url": "/lmis-clone/static/js/2.5da2faa2.chunk.js"
+    "revision": "3fe9d3f85167d28c3b13",
+    "url": "/lmis-clone/static/js/2.f6820b77.chunk.js"
   },
   {
     "revision": "fd707332ec95d3ce04084de6f743535a",
-    "url": "/lmis-clone/static/js/2.5da2faa2.chunk.js.LICENSE.txt"
+    "url": "/lmis-clone/static/js/2.f6820b77.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "66e79edd04ec4c3d8af1",
-    "url": "/lmis-clone/static/js/main.fa6736d3.chunk.js"
+    "revision": "d0630a221bd38a710ef2",
+    "url": "/lmis-clone/static/js/main.1a350e14.chunk.js"
   },
   {
-    "revision": "e6713b3ebfc90520a77a",
-    "url": "/lmis-clone/static/js/runtime-main.f7252885.js"
+    "revision": "828f104574eb0df64848",
+    "url": "/lmis-clone/static/js/runtime-main.16eaac8a.js"
   },
   {
     "revision": "ec1b35d0116f38ff89d697f4453b15a9",
