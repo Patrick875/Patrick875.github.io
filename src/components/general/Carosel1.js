@@ -23,7 +23,11 @@ function Carosel1() {
 		},
 	};
 	return (
-		<Carousel responsive={responsive} infinite={true} autoPlay={true}>
+		<Carousel
+			responsive={responsive}
+			infinite={true}
+			autoPlay={true}
+			removeArrowOnDeviceType={["tablet", "mobile"]}>
 			<div className="item-1">
 				<div className="legend">
 					<h1>Welcome to LMIS</h1>
