@@ -1,7 +1,6 @@
 //jshint esversion:9
 import React from "react";
 import InfoTile from "../general/InfoTile";
-import Showcase from "../general/Showcase";
 import populationIcon from "./../../images/icons/group.png";
 import unemployRateIcon from "./../../images/icons/job.png";
 import hoursOfWorkIcon from "./../../images/icons/working.png";
