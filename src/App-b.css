@@ -365,8 +365,9 @@ li {
 
 .legend button {
     justify-self: center;
-    width: 8em;
-    height: 3em;
+    width: 10em;
+    height: 4em;
+    padding: 1em;
     margin-top: 1em;
     background-color: #035b99;
     color: white;
@@ -378,6 +379,7 @@ li {
     -moz-box-shadow: 1px 1px 20px 0px #000000;
     text-shadow: 1px 1px 20px #000000;
     border: none;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
 }
