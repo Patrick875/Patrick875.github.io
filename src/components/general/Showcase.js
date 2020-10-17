@@ -30,23 +30,22 @@ export default function Showcase() {
 				interval="4500"
 				showThumbs=""
 				showStatus=""
-				dynamicHeight=""
+				dynamicHeight={true}
 				autoPlay={true}
 				transitionTime="400"
 				infiniteLoop={true}
-				width="100%"
-				className="not-funny">
-				<div>
+				className="sawa-sawa-sawa">
+				<div className="not-funny">
 					<div className="crazy-crazy ">
-						<img src={backg1} className="cool-img  " />
+						<img src={backg1} className="cool-img" />
 					</div>
 				</div>
-				<div>
+				<div className="not-funny">
 					<div className="crazy-crazy">
-						<img src={backg2} className="cool-img" style={{ width: "100%" }} />
+						<img src={backg2} className="cool-img" alt="sawa" />
 					</div>
 				</div>
-				<div>
+				<div className="not-funny">
 					<div className="crazy-crazy">
 						<img src={backg3} className="cool-img" />
 					</div>

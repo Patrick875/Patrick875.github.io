@@ -1,10 +1,39 @@
-/*---------------- MEDIA QUERIES---------- */
+/*---------------- MOBILE--------- */
+@media screen and (max-width:480px) {
+	.App {
+		text-align: center
+	}
 
+	.logo-m {
+		height: 60px;
+		width: 100px
+	}
+
+	.home-m {
+		text-align: center;
+	}
+
+	.inf0-tile {
+		width: 80%;
+	}
+
+	.footer {
+		background-color: #035b99;
+		color: white;
+		text-align: center;
+		display: grid;
+
+
+	}
+}
+
+
+/* ------------DESKTOP CLASSES--------------- */
 .App {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	height: 100%;
+	min-height: calc(100vh- 7em);
 	width: 100%;
 	border: none;
 	margin-block-end: 0;
@@ -23,14 +52,6 @@
 	display: grid;
 	justify-content: center;
 }
-
-/* 
-.home,
-.resources,
-.labour-indic,
-.form-login {
-	min-height: calc(100vh - 155.667px 219.667px);
-} */
 
 h3 {
 	text-align: center;
@@ -94,6 +115,7 @@ a {
 	color: black !important
 }
 
+/* 
 .not-cool {
 	width: 100%;
 
@@ -101,7 +123,7 @@ a {
 
 .carousel-slider {
 	height: 30em;
-}
+} */
 
 /* .cool,
 .showcase-front {
@@ -560,49 +582,12 @@ label {
 /* margin: 1em 0;
 	background: blue; */
 /* } */
-*/
-
 /* --------showcase burries-------------- */
-.crazy-crazy {
+/* .crazy-crazy {
 	height: 50vh;
 	object-fit: scale-down;
 }
 
 .not-funny {
 	background-color: none
-}
-
-@media only screen and (max-width:320px) {
-	.header {
-		margin: 0;
-		padding: 0;
-		background-color: red;
-		width: 100%;
-
-	}
-
-	.header_top {
-		padding: 0;
-		background-color: aquamarine;
-		grid-template-columns: repeat(auto-fit, minmax(30%, 50%));
-		width: 100%
-	}
-
-	.header_top_links {
-		justify-self: start;
-	}
-
-	.header_top ul li {
-		padding: 0;
-		display: block;
-	}
-
-	.header_top_links {
-		padding: 0
-	}
-
-	.header_top_logo img {
-		height: 50px;
-		width: 100px;
-	}
-}
+} */

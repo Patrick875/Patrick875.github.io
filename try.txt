@@ -1,3 +1,655 @@
+------------RESOURCES USING MATERIAL UI TABS--------------------
+
+//jshint esversion:9
+import React, { useState } from "react";
+//inside files
+import ebookIcon from "./../../images/icons/ebook.png";
+import caseStudyIcon from "./../../images/icons/case-study.png";
+import chartIcon from "./../../images/icons/graph-bar.png";
+//using material ui components
+import { makeStyles } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import {
+	AppBar,
+	Tabs,
+	Tab,
+	Button,
+	Card,
+	CardContent,
+	CardActions,
+	Typography,
+	Popover,
+	Box,
+} from "@material-ui/core";
+//using axios, download.js and reacjsPDF...
+import axios from "axios";
+import download from "downloadjs";
+import PdfViewer from "./../general/Pdfviewer";
+
+//styles function for material ui
+function TabPanel(props) {
+	const { children, value, index, ...other } = props;
+
+	return (
+		<div
+			role="tabpanel"
+			hidden={value !== index}
+			id={`simple-tabpanel-${index}`}
+			aria-labelledby={`simple-tab-${index}`}
+			{...other}>
+			{value === index && (
+				<Box p={3}>
+					<Typography>{children}</Typography>
+				</Box>
+			)}
+		</div>
+	);
+}
+
+TabPanel.propTypes = {
+	children: PropTypes.node,
+	index: PropTypes.any.isRequired,
+	value: PropTypes.any.isRequired,
+};
+
+function a11yProps(index) {
+	return {
+		id: `simple-tab-${index}`,
+		"aria-controls": `simple-tabpanel-${index}`,
+	};
+}
+
+const useStyles = makeStyles((theme) => ({
+	typography: {
+		padding: theme.spacing(2),
+	},
+	root: {
+		minWidth: 275,
+		flexGrow: 1,
+	},
+	backgroundColor: {
+		backgroundColor: "#035b99",
+	},
+	bullet: {
+		display: "inline-block",
+		margin: "0 2px",
+		transform: "scale(0.8)",
+	},
+	title: {
+		fontSize: 14,
+	},
+	pos: {
+		marginBottom: 0,
+	},
+}));
+
+export default function Resources() {
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
+
+	const classes = useStyles();
+	//Download function
+	const handleDownload = () => {
+		axios
+			.get("./docs/Youth_and_total_unemployment_rate_The_impact_of_po.pdf", {
+				// headers:{
+				// 	'Content-Type':'application/pdf'
+				// },
+				responseType: "blob",
+			})
+			.then((response) => {
+				download(response.data, "file.pdf", "application/pdf");
+			})
+			.catch((error) => console.log(`DOWNLOAD ERROR \n ${error}`));
+	};
+	const handleViewer = () => {
+		setOn(true);
+	};
+	const [on, setOn] = useState(false);
+	const [description, setDescription] = useState({
+		title: "Quota-2 Data",
+		text: "here is data from the 2nd quota of the year 2020",
+	});
+	const [anchorEl, setAnchorEl] = React.useState(null);
+
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const [value, setValue] = useState(0);
+
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+	};
+
+	const open = Boolean(anchorEl);
+	const id = open ? "simple-popover" : undefined;
+	return (
+		<div className="resources">
+			<Popover
+				id={id}
+				open={open}
+				anchorEl={anchorEl}
+				onClose={handleClose}
+				anchorOrigin={{
+					vertical: "bottom",
+					horizontal: "center",
+				}}
+				transformOrigin={{
+					vertical: "top",
+					horizontal: "center",
+				}}>
+				<Card className={classes.root} variant="outlined">
+					<CardContent>
+						<Typography
+							className={classes.title}
+							color="textSecondary"
+							gutterBottom>
+							{description.title}
+						</Typography>
+
+						<Typography className={classes.pos} color="textSecondary">
+							{description.text}
+						</Typography>
+					</CardContent>
+					<CardActions>
+						<Button size="small" onClick={handleViewer}>
+							View
+						</Button>
+						<Button size="small" onClick={handleDownload}>
+							Download
+						</Button>
+					</CardActions>
+				</Card>
+			</Popover>
+			{on ? <PdfViewer /> : null}
+			<div className={classes.root}>
+				<AppBar position="static" classes={classes.backgroundColor}>
+					<Tabs
+						value={value}
+						onChange={handleChange}
+						style={{ backgroundColor: "#035b99" }}
+						aria-label="simple tabs example"
+						scrollButtons="on"
+						direction="left right">
+						<Tab label="Overview" {...a11yProps(0)} />
+						<Tab label="Ebooks" {...a11yProps(1)} />
+						<Tab label="Case-Studies" {...a11yProps(2)} />
+						<Tab label="Publications" {...a11yProps(3)} />
+					</Tabs>
+				</AppBar>
+				<TabPanel value={value} index={0} className="sawa">
+					<h4>Take a look at our law data. Find out where we get our basis.</h4>
+					<h3>How do you like to view your data?</h3>
+					<div className="docs">
+						<div>
+							<img src={ebookIcon} alt="pdf icon" width="80" height="80" />
+							<h4>E-BOOKS</h4>
+						</div>
+						<div>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcons-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>CASE STUDIES</h4>
+						</div>
+						<div>
+							<img
+								src={chartIcon}
+								alt="chartIcons-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>CHARTS</h4>
+						</div>
+					</div>
+					<h3>OUR LATEST PUBLICATIONS</h3>
+					<h4 className="title-h4">Featured e-books</h4>
+					<div className="e-books">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+					</div>
+					<h4 className="title-h4">Featured Case Studies</h4>
+					<div className="case-studies">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+					</div>
+					<h4 className="title-h4">Featured Reports and Publications</h4>
+					<div className="reports">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+					</div>
+					<h4 className="title-h4">PUBLICATIONS</h4>
+					<div className="publications">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={1}>
+					<div className="e-books">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img src={ebookIcon} alt="pdf-icon" width="80" height="80" />
+							<h4>Unemployment in Rwanda</h4>
+							<p>July 2020</p>
+						</div>
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={2}>
+					<h4 className="title-h4">CASE STUDIES</h4>
+					<div className="case-studies">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={caseStudyIcon}
+								alt="caseStudyIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Unemployment in Graduates</h4>
+							<p>May 2020</p>
+						</div>
+					</div>
+				</TabPanel>
+				<TabPanel value={value} index={3}>
+					<h4 className="title-h4">REPORTS AND PUBLICATIONS</h4>
+					<div className="reports">
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+						<div aria-describedby={id} onClick={handleClick}>
+							<img
+								src={chartIcon}
+								alt="chartIcon-icon"
+								width="80"
+								height="80"
+							/>
+							<h4>Minimum Wage per Sector</h4>
+							<p>June 2020</p>
+						</div>
+					</div>
+				</TabPanel>
+			</div>
+		</div>
+	);
+}
+
+// export default function SimpleTabs() {
+
+// 	return (
+
+// 	);
+// }
+
+// <h3>OUR RESOURCES</h3>
+//
+// 				<div aria-describedby={id} onClick={handleClick}>
+// 					<img src={chartIcon} alt="chartIcon-icon" width="80" height="80" />
+// 					<h4>Minimum Wage per Sector</h4>
+// 					<p>June 2020</p>
+// 				</div>
+// 				<div aria-describedby={id} onClick={handleClick}>
+// 					<img src={chartIcon} alt="chartIcon-icon" width="80" height="80" />
+// 					<h4>Minimum Wage per Sector</h4>
+// 					<p>June 2020</p>
+// 				</div>
+// 				<div aria-describedby={id} onClick={handleClick}>
+// 					<img src={chartIcon} alt="chartIcon-icon" width="80" height="80" />
+// 					<h4>Minimum Wage per Sector</h4>
+// 					<p>June 2020</p>
+// 				</div>
+// 				<div aria-describedby={id} onClick={handleClick}>
+// 					<img src={chartIcon} alt="chartIcon-icon" width="80" height="80" />
+// 					<h4>Minimum Wage per Sector</h4>
+// 					<p>June 2020</p>
+// 				</div>
+// 				<div aria-describedby={id} onClick={handleClick}>
+// 					<img src={chartIcon} alt="chartIcon-icon" width="80" height="80" />
+// 					<h4>Minimum Wage per Sector</h4>
+// 					<p>June 2020</p>
+// 				</div>
+// 			</div>
+ 
+ 
+ 
+ ----------------------------------------------------------------------
+ 
+ 
+ 
+ ----------FOR REACT-PDF-VIEW----------
+
+// import React, { Component } from "react";
+// import { Document, Page } from "react-pdf";
+
+// export default class App extends Component {
+// 	state = { numPages: null, pageNumber: 1 };
+
+// 	onDocumentLoadSuccess = ({ numPages }) => {
+// 		this.setState({ numPages });
+// 	};
+
+// 	goToPrevPage = () =>
+// 		this.setState((state) => ({ pageNumber: state.pageNumber - 1 }));
+// 	goToNextPage = () =>
+// 		this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
+
+// 	render() {
+// 		const { pageNumber, numPages } = this.state;
+
+// 		return (
+// 			<div>
+// 				<nav>
+// 					<button onClick={this.goToPrevPage}>Prev</button>
+// 					<button onClick={this.goToNextPage}>Next</button>
+// 				</nav>
+
+// 				<div style={{ width: 600 }}>
+// 					<Document
+// 						file="/example.pdf"
+// 						onLoadSuccess={this.onDocumentLoadSuccess}>
+// 						<Page pageNumber={pageNumber} width={600} />
+// 					</Document>
+// 				</div>
+
+// 				<p>
+// 					Page {pageNumber} of {numPages}
+// 				</p>
+// 			</div>
+// 		);
+// 	}
+// }
+
+
+
+--------------------------------------------------------------------------
+
+
+
+
+// const table = Object.keys(props.data).map((key) => (
+// 	<div className="key-labour">
+// 		<h3>{props.title}</h3>
+// 		<DataElement title={(key.title, key.number)}>
+// 			<p>{key.description}</p>
+// 			<ul>
+// 				<li>
+// 					<Link to="#">read more</Link>
+// 				</li>
+// 				<li>
+// 					<Link to="#">source</Link>
+// 				</li>
+// 			</ul>
+// 		</DataElement>
+// 	</div>
+// ));
+
+
+
+
 <Carousel showThumbs="" showStatus="" dynamicHeight="" infiniteLoop={true}>
 			<div>
 				<div className="crazy-crazy">
@@ -46,3 +698,228 @@
 					</div>
 				</div>
 			</Carousel>
+
+
+
+
+
+
+
+
+// import React from "react";
+// import DataElement from "./../general/DataElement";
+// import { Link } from "react-router-dom";
+// export default function KeyLabour(props) {
+// 	let nfObject = new Intl.NumberFormat("en-US");
+// 	const population = {
+// 		number: nfObject.format(3589583),
+// 		title: "Population of Rwanda",
+// 		percentage: "+(0.34)",
+// 		date: "August 2020",
+// 	};
+// 	const unemploymentRateByAge = {
+// 		number: nfObject.format(3589583),
+// 		title: "Unemployment Rate By Age",
+// 		percentage: "-(0.34)",
+// 		date: "August 2020",
+// 	};
+// 	const minWage = {
+// 		number: `${nfObject.format(9.51)}%`,
+// 		title: "Minimum Wage",
+// 		percentage: "+(0.34)",
+// 		date: "August 2020",
+// 	};
+// 	const hoursOfWork = {
+// 		number: nfObject.format(1589423),
+// 		title: "Hours of Work",
+// 		percentage: "-(0.34)",
+// 		date: "August 2020",
+// 	};
+// 	const underU = {
+// 		number: `${nfObject.format(57.0)}%`,
+// 		title: "Labour Under-utilization",
+// 		percentage: "+(0.34)",
+// 		date: "August 2020",
+// 	};
+// 	return (
+// 		<div className="key-labour">
+// 			<h3>{props.title}</h3>
+// 			<DataElement
+// 				title={{ title: population.title, number: population.number }}>
+// 				Sunlight reaches Earth's atmosphere and is scattered in all directions
+// 				by all the gases and particles in the air. Blue light is scattered more
+// 				than the other colors because it travels as shorter, smaller waves. This
+// 				is why we see a blue sky most of the time.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 			<DataElement
+// 				title={{
+// 					title: unemploymentRateByAge.title,
+// 					number: unemploymentRateByAge.number,
+// 				}}>
+// 				It's really hot inside Jupiter! No one knows exactly how hot, but
+// 				scientists think it could be about 43,000°F (24,000°C) near Jupiter's
+// 				center, or core.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 			<DataElement title={{ title: minWage.title, number: minWage.number }}>
+// 				It's really hot inside Jupiter! No one knows exactly how hot, but
+// 				scientists think it could be about 43,000°F (24,000°C) near Jupiter's
+// 				center, or core.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 			<DataElement
+// 				title={{ title: hoursOfWork.title, number: hoursOfWork.number }}>
+// 				A black hole is an area of such immense gravity that nothing -- not even
+// 				light -- can escape from it.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 			<DataElement title={{ title: underU.title, number: underU.number }}>
+// 				A black hole is an area of such immense gravity that nothing -- not even
+// 				light -- can escape from it.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 			<DataElement
+// 				title={{ title: population.title, number: population.number }}>
+// 				A black hole is an area of such immense gravity that nothing -- not even
+// 				light -- can escape from it.
+// 				<ul>
+// 					<li>
+// 						<Link to="#">read more</Link>
+// 					</li>
+// 					<li>
+// 						<Link to="#">source</Link>
+// 					</li>
+// 				</ul>
+// 			</DataElement>
+// 		</div>
+// 	);
+// }
+
+
+
+
+
+//jshint esversion:9
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Tabs, Tab } from "@material-ui/core";
+import LbSummary from "./subpages/LbSummary";
+import LbLaborforce from "./../pages/subpages/LbLaborforce";
+import LbUnempData from "./../pages/subpages/LbUnempData";
+import LbSalWag from "./../pages/subpages/LbSalWag";
+import LbEmpData from "./../pages/subpages/LbEmpData";
+
+export default function Lbindicators() {
+	const allTabs = [
+		"/labour-market-indicators",
+		"/labour-market-indicators/labour-force",
+		"/labour-market-indicators/employment-data",
+		"/labour-market-indicators/unemployment-data",
+		"/labour-market-indicators/salary-wages",
+	];
+	return (
+		<div className="labour-indic">
+			<div className="labour-indic-nav">
+				<Router>
+					<Route
+						path="/"
+						render={({ location }) => (
+							<Fragment>
+								<Tabs
+									value={location.pathname}
+									variant="scrollable"
+									scrollButtons="on"
+									indicatorColor="primary"
+									aria-label="scrollable force tabs example">
+									<Tab label="Summary" component={Link} to={allTabs[0]} />
+									<Tab label="Labour Force" component={Link} to={allTabs[1]} />
+									<Tab
+										label="Employment Data"
+										component={Link}
+										to={allTabs[2]}
+									/>
+									<Tab
+										label="Unemployment Data"
+										component={Link}
+										to={allTabs[3]}
+									/>
+									<Tab label="Salary&Wages" component={Link} to={allTabs[4]} />
+								</Tabs>
+								<Switch>
+									<Route path={allTabs[0]} render={() => <LbSummary />} />
+									<Route path={allTabs[1]} render={() => <LbLaborforce />} />
+									<Route path={allTabs[2]} render={() => <LbEmpData />} />
+									<Route path={allTabs[3]} render={() => <LbUnempData />} />
+									<Route path={allTabs[4]} render={() => <LbSalWag />} />
+								</Switch>
+							</Fragment>
+						)}
+					/>
+				</Router>
+			</div>
+		</div>
+	);
+}
+
+//   <div className="App">
+//     <Route
+//       path="/"
+//       render={({ location }) => (
+//         <Fragment>
+//           <Tabs value={location.pathname}>
+//             <Tab label="Item One" value="/" component={Link} to={allTabs[0]} />
+//             <Tab label="Item Two" value="/tab2" component={Link} to={allTabs[1]} />
+//             <Tab
+//               value="/tab3"
+//               label="Item Three"
+//               component={Link}
+//               to={allTabs[2]}
+//             />
+//           </Tabs>
+//           <Switch>
+//             <Route path={allTabs[1]} render={() => <div>Tab 2</div>} />
+//             <Route path={allTabs[2]} render={() => <div>Tab 3</div>} />
+//             <Route path={allTabs[0]} render={() => <div>Tab 1</div>} />
+//           </Switch>
+//         </Fragment>
+//       )}
+//     />
+//   </div>
+// </BrowserRouter>
+

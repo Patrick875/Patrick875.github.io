@@ -2,12 +2,14 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { compose, applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./store/reducers/rootReducer";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import Footer from "./components/general/Footer";
 
 const store = createStore(rootReducer);
 
@@ -15,6 +17,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>
 			<App />
+			<Footer />
 		</Provider>
 	</React.StrictMode>,
 	document.getElementById("root")

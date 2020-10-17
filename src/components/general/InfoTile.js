@@ -1,6 +1,6 @@
 //jshint esversion:9
 import React from "react";
-
+import Card from "@material-ui/core/Card";
 export default function InfoTile(props) {
 	const statusIcon = props.data.percentage.includes("+")
 		? props.statusIcon.upIcon
@@ -8,7 +8,7 @@ export default function InfoTile(props) {
 	const backg = statusIcon.includes("arrow-74") ? "#0F996D" : "#B5056C";
 	console.log(statusIcon);
 	return (
-		<div className="info-tile">
+		<Card className="info-tile" variant="outlined" width="80%" elevation="8dp">
 			<img
 				src={props.data.icon}
 				alt="many-people-icon"
@@ -30,6 +30,6 @@ export default function InfoTile(props) {
 				/>
 			</div>
 			<p>{props.data.date}</p>
-		</div>
+		</Card>
 	);
 }
