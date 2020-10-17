@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/lmis-front-end/static/css/main.f94ac502.chunk.css",
+    "main.css": "/lmis-front-end/static/css/main.4a16c7f6.chunk.css",
     "main.js": "/lmis-front-end/static/js/main.5174b8f4.chunk.js",
     "main.js.map": "/lmis-front-end/static/js/main.5174b8f4.chunk.js.map",
     "runtime-main.js": "/lmis-front-end/static/js/runtime-main.10e01b50.js",
@@ -9,10 +9,10 @@
     "static/js/2.d447b65e.chunk.js": "/lmis-front-end/static/js/2.d447b65e.chunk.js",
     "static/js/2.d447b65e.chunk.js.map": "/lmis-front-end/static/js/2.d447b65e.chunk.js.map",
     "index.html": "/lmis-front-end/index.html",
-    "precache-manifest.93ac53f084ca19e4c772eabd7b9e698f.js": "/lmis-front-end/precache-manifest.93ac53f084ca19e4c772eabd7b9e698f.js",
+    "precache-manifest.7255c0fdde8a59af5f31af24fd22432e.js": "/lmis-front-end/precache-manifest.7255c0fdde8a59af5f31af24fd22432e.js",
     "service-worker.js": "/lmis-front-end/service-worker.js",
     "static/css/2.e0bf78c6.chunk.css.map": "/lmis-front-end/static/css/2.e0bf78c6.chunk.css.map",
-    "static/css/main.f94ac502.chunk.css.map": "/lmis-front-end/static/css/main.f94ac502.chunk.css.map",
+    "static/css/main.4a16c7f6.chunk.css.map": "/lmis-front-end/static/css/main.4a16c7f6.chunk.css.map",
     "static/js/2.d447b65e.chunk.js.LICENSE.txt": "/lmis-front-end/static/js/2.d447b65e.chunk.js.LICENSE.txt",
     "static/media/LMIS Training Agenda.pdf": "/lmis-front-end/static/media/LMIS Training Agenda.ec1b35d0.pdf",
     "static/media/SNOWWHITE LMIS copy.png": "/lmis-front-end/static/media/SNOWWHITE LMIS copy.fc9e3b20.png",
@@ -35,7 +35,7 @@
     "static/js/runtime-main.10e01b50.js",
     "static/css/2.e0bf78c6.chunk.css",
     "static/js/2.d447b65e.chunk.js",
-    "static/css/main.f94ac502.chunk.css",
+    "static/css/main.4a16c7f6.chunk.css",
     "static/js/main.5174b8f4.chunk.js"
   ]
 }
