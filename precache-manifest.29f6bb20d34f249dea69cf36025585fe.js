@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "07d63af946f104b02658c0d09b725af5",
+    "revision": "205022e11d37d0fe27042694ce9bf079",
     "url": "/Patrick875.github.io/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Patrick875.github.io/static/css/2.2487fd97.chunk.css"
   },
   {
-    "revision": "8fadbb8209574a8786c3",
-    "url": "/Patrick875.github.io/static/css/main.b9e35fc7.chunk.css"
+    "revision": "17c6958b7a64c8d65478",
+    "url": "/Patrick875.github.io/static/css/main.4f629cc8.chunk.css"
   },
   {
     "revision": "e520e22e508d16567659",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Patrick875.github.io/static/js/2.9be4566a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8fadbb8209574a8786c3",
+    "revision": "17c6958b7a64c8d65478",
     "url": "/Patrick875.github.io/static/js/main.395a9ec4.chunk.js"
   },
   {

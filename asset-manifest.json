@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Patrick875.github.io/static/css/main.b9e35fc7.chunk.css",
+    "main.css": "/Patrick875.github.io/static/css/main.4f629cc8.chunk.css",
     "main.js": "/Patrick875.github.io/static/js/main.395a9ec4.chunk.js",
     "main.js.map": "/Patrick875.github.io/static/js/main.395a9ec4.chunk.js.map",
     "runtime-main.js": "/Patrick875.github.io/static/js/runtime-main.f6617401.js",
@@ -9,10 +9,10 @@
     "static/js/2.9be4566a.chunk.js": "/Patrick875.github.io/static/js/2.9be4566a.chunk.js",
     "static/js/2.9be4566a.chunk.js.map": "/Patrick875.github.io/static/js/2.9be4566a.chunk.js.map",
     "index.html": "/Patrick875.github.io/index.html",
-    "precache-manifest.8fa0ededaf8ca36d8fd036edeff27907.js": "/Patrick875.github.io/precache-manifest.8fa0ededaf8ca36d8fd036edeff27907.js",
+    "precache-manifest.29f6bb20d34f249dea69cf36025585fe.js": "/Patrick875.github.io/precache-manifest.29f6bb20d34f249dea69cf36025585fe.js",
     "service-worker.js": "/Patrick875.github.io/service-worker.js",
     "static/css/2.2487fd97.chunk.css.map": "/Patrick875.github.io/static/css/2.2487fd97.chunk.css.map",
-    "static/css/main.b9e35fc7.chunk.css.map": "/Patrick875.github.io/static/css/main.b9e35fc7.chunk.css.map",
+    "static/css/main.4f629cc8.chunk.css.map": "/Patrick875.github.io/static/css/main.4f629cc8.chunk.css.map",
     "static/js/2.9be4566a.chunk.js.LICENSE.txt": "/Patrick875.github.io/static/js/2.9be4566a.chunk.js.LICENSE.txt",
     "static/media/LMIS Training Agenda.pdf": "/Patrick875.github.io/static/media/LMIS Training Agenda.ec1b35d0.pdf",
     "static/media/SNOWWHITE LMIS copy.png": "/Patrick875.github.io/static/media/SNOWWHITE LMIS copy.fc9e3b20.png",
@@ -35,7 +35,7 @@
     "static/js/runtime-main.f6617401.js",
     "static/css/2.2487fd97.chunk.css",
     "static/js/2.9be4566a.chunk.js",
-    "static/css/main.b9e35fc7.chunk.css",
+    "static/css/main.4f629cc8.chunk.css",
     "static/js/main.395a9ec4.chunk.js"
   ]
 }
