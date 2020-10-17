@@ -29,7 +29,7 @@ function Carosel1() {
 					<h1>Welcome to LMIS</h1>
 					<p>LABOUR MARKET INFORMATION SYSTEM </p>
 
-					<button>Get started</button>
+					<button>GET STARTED</button>
 				</div>
 			</div>
 
@@ -40,7 +40,7 @@ function Carosel1() {
 						View the data in different ways to get deep understanding of what's
 						happening
 					</p>
-					<button>View Our Resources</button>
+					<button>VIEW OUR RESOURCES</button>
 				</div>
 			</div>
 
@@ -51,7 +51,7 @@ function Carosel1() {
 						Get even more power signing up so that you can download, customize
 						and upload data on this platform
 					</p>
-					<button>Signup/Login</button>
+					<button>SIGNUP/LOGIN</button>
 				</div>
 			</div>
 		</Carousel>
