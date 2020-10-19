@@ -2,8 +2,63 @@
 import React from "react";
 import axios from "axios";
 import download from "downloadjs";
+import ResourcesDataCard from "../../general/Resources_data_card";
 
 function Overview(props) {
+	const imgSizes = {
+		width: 80,
+		height: 80,
+	};
+	const data = {
+		ebooks: {
+			imgData: {
+				src: `${props.icons.ebookIcon}`,
+				width: imgSizes.width,
+				height: imgSizes.height,
+				alt: "Pdf icon",
+			},
+			title: [
+				"unemployment in Rwanda",
+				"Labour force Distribution by Sector",
+				"Labour underUtilization",
+			],
+			dates: ["July 2020", "August 2020", "September 2020"],
+		},
+		caseStudies: {
+			imgData: {
+				src: `${props.icons.caseStudyIcon}`,
+				width: imgSizes.width,
+				height: imgSizes.height,
+				alt: "Searching Icon",
+			},
+			title: {
+				titleHead: "Case Studies",
+				titleCard: [
+					"Factors for Youth unemployment",
+					"Women unemployment in Rwanda",
+					"Rural Vs Urban salaries and wages gap",
+				],
+			},
+			dates: ["January 2020", "December 2019", "July 2020"],
+		},
+		reportsAndPublications: {
+			imgData: {
+				src: `${props.icons.chartIcon}`,
+				width: imgSizes.width,
+				height: imgSizes.height,
+				alt: "Searching Icon",
+			},
+			title: {
+				titleHead: "Reports and Publications",
+				titleCard: [
+					"Unemployment Status",
+					"NISR labor statistics quota 2 2020",
+					"ILO Rwanda labor status quota 2 2020",
+				],
+			},
+			dates: ["January 2020", "July 2019", "July 2020"],
+		},
+	};
 	const handleDownload = () => {
 		axios
 			.get("./docs/Youth_and_total_unemployment_rate_The_impact_of_po.pdf", {
@@ -14,6 +69,7 @@ function Overview(props) {
 			})
 			.catch((error) => console.log(`DOWNLOAD ERROR \n ${error}`));
 	};
+
 	return (
 		<div>
 			<h3>OUR RESOURCES</h3>
@@ -53,54 +109,17 @@ function Overview(props) {
 				<h4 className="title-h4"> Featured Ebooks</h4>
 			</div>
 			<div className="e-books">
-				<div>
-					<img
-						src={props.icons.ebookIcon}
-						alt="pdf-icon"
-						width="80"
-						height="80"
+				{data.ebooks.title.map((el, elI) => (
+					<ResourcesDataCard
+						imgData={{
+							src: `${data.ebooks.imgData.src}`,
+							alt: data.ebooks.imgData.alt,
+							width: data.ebooks.imgData.width,
+							height: data.ebooks.imgData.height,
+						}}
+						data={{ title: el, date: data.ebooks.dates[elI] }}
 					/>
-					<h4>Unemployment in Rwanda</h4>
-					<p>July 2020</p>
-					<button onClick={handleDownload} className="download-btn">
-						Download
-					</button>
-					<button onClick={handleDownload} className="view-btn">
-						View
-					</button>
-				</div>
-				<div>
-					<img
-						src={props.icons.ebookIcon}
-						alt="pdf-icon"
-						width="80"
-						height="80"
-					/>
-					<h4>Unemployment in Rwanda</h4>
-					<p>July 2020</p>
-					<button onClick={handleDownload} className="download-btn">
-						Download
-					</button>
-					<button onClick={handleDownload} className="view-btn">
-						View
-					</button>
-				</div>
-				<div>
-					<img
-						src={props.icons.ebookIcon}
-						alt="pdf-icon"
-						width="80"
-						height="80"
-					/>
-					<h4>Unemployment in Rwanda</h4>
-					<p>July 2020</p>
-					<button onClick={handleDownload} className="download-btn">
-						Download
-					</button>
-					<button onClick={handleDownload} className="view-btn">
-						View
-					</button>
-				</div>
+				))}
 			</div>
 			<div>
 				<h4 className="title-h4"> Featured Case Studies</h4>
