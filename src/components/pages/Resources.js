@@ -16,7 +16,6 @@ import Ebooks from "./subpages/Ebooks";
 
 export default function Resources() {
 	const handleDownload = () => {
-		console.log("WEEEEE  SHAAAAAAAA WEEEE PETIT");
 		axios
 			.get("./docs/Youth_and_total_unemployment_rate_The_impact_of_po.pdf", {
 				// headers:{
