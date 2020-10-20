@@ -2,6 +2,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import CarouselItem from "./CarouselItem";
 
 function Carosel1() {
 	const responsive = {
@@ -22,42 +23,32 @@ function Carosel1() {
 			items: 1,
 		},
 	};
+	const legendData = {
+		titles: ["Welcome to LMIS", "Get deep analysis", "Be part of us"],
+		descriptions: [
+			"LABOUR MARKET INFORMATION SYSTEM",
+			"View the data in different ways to get deep understanding of what's happening",
+			"Get even more power signing up so that you can download, customize and upload data on this platform",
+		],
+		buttonTexts: ["GET STARTED", "VIEW OUR RESOURCES", "SIGNUP/LOGIN"],
+	};
 	return (
 		<Carousel
 			responsive={responsive}
 			infinite={true}
 			autoPlay={true}
+			autoPlaySpeed={3000}
 			removeArrowOnDeviceType={["tablet", "mobile"]}>
-			<div className="item-1">
-				<div className="legend">
-					<h1>Welcome to LMIS</h1>
-					<p>LABOUR MARKET INFORMATION SYSTEM </p>
-
-					<button>GET STARTED</button>
-				</div>
-			</div>
-
-			<div className="item-2">
-				<div className="legend">
-					<h1>Get deep analysis</h1>
-					<p>
-						View the data in different ways to get deep understanding of what's
-						happening
-					</p>
-					<button>VIEW OUR RESOURCES</button>
-				</div>
-			</div>
-
-			<div className="item-3">
-				<div className="legend">
-					<h1>Be part of us</h1>
-					<p>
-						Get even more power signing up so that you can download, customize
-						and upload data on this platform
-					</p>
-					<button>SIGNUP/LOGIN</button>
-				</div>
-			</div>
+			{legendData.titles.map((el, elI) => (
+				<CarouselItem
+					class={`item-${elI + 1}`}
+					data={{
+						header: legendData.titles[elI],
+						text: legendData.descriptions[elI],
+						buttonText: legendData.buttonTexts[elI],
+					}}
+				/>
+			))}
 		</Carousel>
 	);
 }

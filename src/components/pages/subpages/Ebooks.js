@@ -2,8 +2,9 @@
 import React from "react";
 import axios from "axios";
 import download from "downloadjs";
+import ResourcesDataCard from "../../general/Resources_data_card";
 
-function Ebooks({ icon }) {
+function Ebooks(props) {
 	const handleDownload = () => {
 		axios
 			.get("./docs/Youth_and_total_unemployment_rate_The_impact_of_po.pdf", {
@@ -14,162 +15,47 @@ function Ebooks({ icon }) {
 			})
 			.catch((error) => console.log(`DOWNLOAD ERROR \n ${error}`));
 	};
+	const ebooks = {
+		imgData: {
+			alt: "Pdf icon",
+		},
+		title: [
+			"unemployment in Rwanda",
+			"Labour force Distribution by Sector",
+			"Labour underUtilization",
+			"unemployment in Rwanda",
+			"Labour force Distribution by Sector",
+			"Labour underUtilization",
+			"unemployment in Rwanda",
+			"Labour force Distribution by Sector",
+			"Labour underUtilization",
+		],
+		dates: [
+			"July 2020",
+			"August 2020",
+			"September 2020",
+			"July 2019",
+			"August 2019",
+			"September 2019",
+			"July 2018",
+			"August 2018",
+			"September 2018",
+		],
+	};
 	return (
 		<div className="e-books">
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
-			<div>
-				<img src={icon.ebookIcon} alt="pdf-icon" width="80" height="80" />
-				<h4>Unemployment in Rwanda</h4>
-				<p>July 2020</p>
-				<button onClick={handleDownload} className="download-btn">
-					Download
-				</button>
-				<button onClick={handleDownload} className="view-btn">
-					View
-				</button>
-			</div>
+			{ebooks.title.map((el, elI) => (
+				<ResourcesDataCard
+					imgData={{
+						src: props.icon,
+						alt: `${ebooks.imgData.alt} `,
+						width: props.imgSizes.width,
+						height: props.imgSizes.height,
+					}}
+					data={{ dates: ebooks.dates[elI] }}
+					title={el}
+				/>
+			))}
 		</div>
 	);
 }

@@ -4,29 +4,15 @@ import ebookIcon from "./../../images/icons/ebook.png";
 import caseStudyIcon from "./../../images/icons/case-study.png";
 import chartIcon from "./../../images/icons/graph-bar.png";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { Button, ButtonGroup } from "@material-ui/core";
-import axios from "axios";
-import download from "downloadjs";
-import Pdfviewer from "./../general/Pdfviewer";
-import PdfViewer from "./../general/Pdfviewer";
 import Overview from "./subpages/Overview";
 import Casestudies from "./subpages/Casestudies";
 import Publications from "./subpages/Publications";
 import Ebooks from "./subpages/Ebooks";
 
 export default function Resources() {
-	const handleDownload = () => {
-		axios
-			.get("./docs/Youth_and_total_unemployment_rate_The_impact_of_po.pdf", {
-				// headers:{
-				// 	'Content-Type':'application/pdf'
-				// },
-				responseType: "blob",
-			})
-			.then((response) => {
-				download(response.data, "file.pdf", "application/pdf");
-			})
-			.catch((error) => console.log(`DOWNLOAD ERROR \n ${error}`));
+	const imgSizes = {
+		width: 80,
+		height: 80,
 	};
 	return (
 		<div className="resources">
@@ -56,34 +42,24 @@ export default function Resources() {
 									caseStudyIcon: caseStudyIcon,
 									chartIcon: chartIcon,
 								}}
+								imgSizes={imgSizes}
 							/>
 						)}
 					/>
 					<Route
 						path="/resources/ebooks"
-						component={() => (
-							<Ebooks
-								icon={{ ebookIcon: ebookIcon }}
-								handleClick={handleDownload}
-							/>
-						)}
+						component={() => <Ebooks icon={ebookIcon} imgSizes={imgSizes} />}
 					/>
 					<Route
 						path="/resources/case-studies"
 						component={() => (
-							<Casestudies
-								icon={{ caseStudyIcon: caseStudyIcon }}
-								handleClick={handleDownload}
-							/>
+							<Casestudies icon={caseStudyIcon} imgSizes={imgSizes} />
 						)}
 					/>
 					<Route
 						path="/resources/publications"
 						component={() => (
-							<Publications
-								icon={{ chartIcon: chartIcon }}
-								handleClick={handleDownload}
-							/>
+							<Publications icon={chartIcon} imgSizes={imgSizes} />
 						)}
 					/>
 				</Switch>

@@ -1,7 +1,7 @@
 //jshint esversion:9
 import React from "react";
 
-export default function LoginForm() {
+export default function Login() {
 	return (
 		<div className="login">
 			<div className="login-info-side"></div>

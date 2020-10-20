@@ -16,8 +16,35 @@ import upIcon from "./../../images/icons/iconmonstr-arrow-74-240.png";
 import downIcon from "./../../images/icons/iconmonstr-arrow-73-240.png";
 import { Link } from "react-router-dom";
 import Carosel1 from "../general/Carosel1";
+import HomeLabourIndicDescr from "./../general/Home_labour_indic_descr";
 
-export default function Home() {
+export default function Home(props) {
+	const data = {
+		titles: [
+			"Labour Force Statistics",
+			"Employment Statistics",
+			"Unemployment Statistics",
+			"Salary&Wages",
+		],
+		iconSize: {
+			width: 40,
+			height: 40,
+		},
+		icons: [laborForceIcon, unemploymentIcon, employmentIcon, salaryIcon],
+		links: [
+			"labour-market-indicators/labor-force",
+			"/labour-market-indicators/employment-data",
+			"labour-market-indicators/unemployment-data",
+			"labour-market-indicators/salary-wages",
+		],
+		description: [
+			"The labour force participation rate is a measure of the proportion of a country’s working-age population that engages actively in the labour market, either by working or looking for work.",
+			"The employment-to-population ratio is defined as the proportion of a country’s working-age population that is employed. A high ratio means that a large proportion of the population is employed, while a low ratio means that a large share of the population is either unemployed or out of the labour force.",
+			"The indicator of status in employment distinguishes between two categories of the total employed. These are: (a) wage and salaried workers (also known as employees); and (b) self-employed workers.",
+			"The KILM 8 indicator is a measure of employment in the informal economy as a percentage of total non-agricultural employment. There are wide variations in definitions and methodology of data collection related to the informal economy.",
+		],
+	};
+
 	let nfObject = new Intl.NumberFormat("en-US");
 	let statusIcons = {
 		upIcon: upIcon,
@@ -60,6 +87,7 @@ export default function Home() {
 		percentage: "+(0.34)",
 		date: "August 2020",
 	};
+
 	return (
 		<React.Fragment>
 			<div className="home">
@@ -87,57 +115,22 @@ export default function Home() {
 							</p>
 						</div>
 
-						<div className="left">
-							<Link to="/labour-market-indicators/labor-force">
-								<h4> Labour Force Statistics</h4>
-							</Link>
-
-							<img src={laborForceIcon} width="40" height="40" alt="" />
-							<p>
-								The labour force participation rate is a measure of the
-								proportion of a country’s working-age population that engages
-								actively in the labour market, either by working or looking for
-								work.
-							</p>
-						</div>
-						<div className="right">
-							<Link to="/labour-market-indicators/employment-data">
-								<h4> Employment Statistics</h4>
-							</Link>
-
-							<img src={employmentIcon} width="40" height="40" alt="" />
-							<p>
-								The employment-to-population ratio is defined as the proportion
-								of a country’s working-age population that is employed. A high
-								ratio means that a large proportion of the population is
-								employed, while a low ratio means that a large share of the
-								population is either unemployed or out of the labour force.
-							</p>
-						</div>
-						<div className="left">
-							<Link to="/labour-market-indicators/unemployment-data">
-								<h4> Unemployment Statistics</h4>
-							</Link>
-							<img src={unemploymentIcon} width="40" height="40" alt="" />
-							<p>
-								The indicator of status in employment distinguishes between two
-								categories of the total employed. These are: (a) wage and
-								salaried workers (also known as employees); and (b)
-								self-employed workers.
-							</p>
-						</div>
-						<div className="right">
-							<Link to="/labour-market-indicators/salary-wages">
-								<h4> Salary&Wages</h4>
-							</Link>
-							<img src={salaryIcon} width="40" height="40" alt="" />
-							<p>
-								The KILM 8 indicator is a measure of employment in the informal
-								economy as a percentage of total non-agricultural employment.
-								There are wide variations in definitions and methodology of data
-								collection related to the informal economy.
-							</p>
-						</div>
+						{data.titles.map((el, elI) => (
+							<HomeLabourIndicDescr
+								imgData={{
+									src: `${data.icons[elI]}`,
+									alt: ``,
+									width: data.iconSize.width,
+									height: data.iconSize.height,
+								}}
+								class={elI % 2 === 0 ? `left` : `right`}
+								data={{
+									title: el,
+									link: data.links[elI],
+									description: data.description[elI],
+								}}
+							/>
+						))}
 					</div>
 					<div className="body-right">
 						<Timeline
@@ -166,30 +159,3 @@ export default function Home() {
 		</React.Fragment>
 	);
 }
-// <Showcase />;
-// <Carosel1 />;
-//population of Rwanda:3,589,583
-//unemployment rate by age:3,589,583
-//Minimum wage:9.51%
-//hours of work:1,589,423
-//labour under-utilization:57.0%
-// <Showcase />;
-
-// Timeline (with options)
-// <Timeline
-//   dataSource={{
-//     sourceType: 'profile',
-//     screenName: 'TwitterDev'
-//   }}
-//   options={{
-//     height: '400'
-//   }}
-// />
-
-// // Tweet (without options)
-// <Tweet tweetId="841418541026877441" />
-
-// <h3>KEY LABOUR INDICATORS</h3>;
-
-// <KeyLabour title="POPULATION STATISTICS" />
-// <KeyLabour title="EDUCATION STATISTICS" />

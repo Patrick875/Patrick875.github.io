@@ -1,6 +1,6 @@
 //jshint esversion:9
 import React from "react";
-import logo from "./../../images/SNOWWHITE LMIS-2 copy.png";
+import logo from "./../../images/SNOWWHITE LMIS copy.png";
 import fcbkIcon from "./../../images/icons/iconmonstr-facebook-3-240.png";
 import twitterIcon from "./../../images/icons/iconmonstr-twitter-1-240.png";
 import linkedinIcon from "./../../images/icons/iconmonstr-linkedin-3-240.png";

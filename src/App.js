@@ -1,16 +1,14 @@
 //jshint esversion:9
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import "./App.css";
 import "./App-b.css";
 import Home from "./components/pages/Home";
 import Header from "./components/general/Header";
 import HeaderM from "./components/general/HeaderM";
-import Footer from "./components/general/Footer";
 import LbIndicators from "./components/pages/LbIndicators";
 import Resources from "./components/pages/Resources";
-import LoginForm from "./components/general/LoginForm";
-import SignUp from "./components/general/SignUp";
+import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp";
 import withSizes from "react-sizes";
 
 function App({ isMobile }) {
@@ -22,7 +20,7 @@ function App({ isMobile }) {
 					<Route exact path="/" component={Home} />
 					<Route path="/labour-market-indicators" component={LbIndicators} />
 					<Route path="/resources" component={Resources} />
-					<Route path="/login" component={LoginForm} />
+					<Route path="/login" component={Login} />
 					<Route path="/signup" component={SignUp} />
 				</Switch>
 			</Router>
