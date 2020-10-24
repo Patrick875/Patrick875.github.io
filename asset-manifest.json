@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Patrick875.github.io/static/css/main.043507da.chunk.css",
-    "main.js": "/Patrick875.github.io/static/js/main.5edd1709.chunk.js",
-    "main.js.map": "/Patrick875.github.io/static/js/main.5edd1709.chunk.js.map",
+    "main.css": "/Patrick875.github.io/static/css/main.4135e1da.chunk.css",
+    "main.js": "/Patrick875.github.io/static/js/main.042a65c0.chunk.js",
+    "main.js.map": "/Patrick875.github.io/static/js/main.042a65c0.chunk.js.map",
     "runtime-main.js": "/Patrick875.github.io/static/js/runtime-main.6f557def.js",
     "runtime-main.js.map": "/Patrick875.github.io/static/js/runtime-main.6f557def.js.map",
     "static/css/2.5ecd0c6d.chunk.css": "/Patrick875.github.io/static/css/2.5ecd0c6d.chunk.css",
-    "static/js/2.bf9f4260.chunk.js": "/Patrick875.github.io/static/js/2.bf9f4260.chunk.js",
-    "static/js/2.bf9f4260.chunk.js.map": "/Patrick875.github.io/static/js/2.bf9f4260.chunk.js.map",
+    "static/js/2.80eb71d7.chunk.js": "/Patrick875.github.io/static/js/2.80eb71d7.chunk.js",
+    "static/js/2.80eb71d7.chunk.js.map": "/Patrick875.github.io/static/js/2.80eb71d7.chunk.js.map",
     "index.html": "/Patrick875.github.io/index.html",
     "static/css/2.5ecd0c6d.chunk.css.map": "/Patrick875.github.io/static/css/2.5ecd0c6d.chunk.css.map",
-    "static/css/main.043507da.chunk.css.map": "/Patrick875.github.io/static/css/main.043507da.chunk.css.map",
-    "static/js/2.bf9f4260.chunk.js.LICENSE.txt": "/Patrick875.github.io/static/js/2.bf9f4260.chunk.js.LICENSE.txt",
+    "static/css/main.4135e1da.chunk.css.map": "/Patrick875.github.io/static/css/main.4135e1da.chunk.css.map",
+    "static/js/2.80eb71d7.chunk.js.LICENSE.txt": "/Patrick875.github.io/static/js/2.80eb71d7.chunk.js.LICENSE.txt",
     "static/media/SNOWWHITE LMIS copy.f5b52ff0.png": "/Patrick875.github.io/static/media/SNOWWHITE LMIS copy.f5b52ff0.png",
     "static/media/App-b.css": "/Patrick875.github.io/static/media/signup-art.6e8e21bb.png",
     "static/media/case-study.b7b5baf7.png": "/Patrick875.github.io/static/media/case-study.b7b5baf7.png",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.6f557def.js",
     "static/css/2.5ecd0c6d.chunk.css",
-    "static/js/2.bf9f4260.chunk.js",
-    "static/css/main.043507da.chunk.css",
-    "static/js/main.5edd1709.chunk.js"
+    "static/js/2.80eb71d7.chunk.js",
+    "static/css/main.4135e1da.chunk.css",
+    "static/js/main.042a65c0.chunk.js"
   ]
 }
