@@ -3,10 +3,13 @@ import React from "react";
 import CarouselButton from "./CarouselButton";
 
 function CarouselLegend(props) {
+	const text = props.data.text.split(".");
 	return (
 		<div className="legend">
 			<h1>{props.data.header}</h1>
-			<p>{props.data.text}</p>
+			{text.map((el) => (
+				<p>{el}</p>
+			))}
 			<CarouselButton> {props.data.buttonText} </CarouselButton>
 		</div>
 	);

@@ -1,5 +1,6 @@
 //jshint esversion:9
 import React from "react";
+import { useSelector } from "react-redux";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CarouselItem from "./CarouselItem";
@@ -23,15 +24,7 @@ function Carosel1() {
 			items: 1,
 		},
 	};
-	const legendData = {
-		titles: ["Welcome to LMIS", "Get deep analysis", "Be part of us"],
-		descriptions: [
-			"LABOUR MARKET INFORMATION SYSTEM",
-			"View the data in different ways to get deep understanding of what's happening",
-			"Get even more power signing up so that you can download, customize and upload data on this platform",
-		],
-		buttonTexts: ["GET STARTED", "VIEW OUR RESOURCES", "SIGNUP/LOGIN"],
-	};
+	const legendData = useSelector((state) => state.carouselData.legendData);
 	return (
 		<Carousel
 			responsive={responsive}

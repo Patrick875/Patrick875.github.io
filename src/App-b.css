@@ -754,6 +754,7 @@ label {
     padding: 0 0.4em;
 }
 
+/* 
 .footer-bottom ul {
     background-color: #023960;
     display: grid;
@@ -762,7 +763,7 @@ label {
     align-content: center;
     margin: 0;
     padding: 0
-}
+} */
 
 .footer-bottom {
     width: 100%;

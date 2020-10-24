@@ -1,6 +1,17 @@
 //jshint esversion:9
 
 const initState = {
+	carouselData: {
+		legendData: {
+			titles: ["Welcome to LMIS", "Get deep analysis", "Be part of us"],
+			descriptions: [
+				"LABOUR MARKET INFORMATION SYSTEM. Find all information about labor market in Rwanda in the same place.",
+				"View the data in different ways to get deep understanding of what's happening",
+				"Get even more power signing up so that you can download, customize and upload data on this platform",
+			],
+			buttonTexts: ["GET STARTED", "VIEW OUR RESOURCES", "SIGNUP/LOGIN"],
+		},
+	},
 	isLoggedIn: false,
 	LabourMarketGraphData: {
 		headers: ["LABOR FORCE", "EMPLOYMENT", "UNEMPLOYMENT", "SALARY AND WAGES"],
