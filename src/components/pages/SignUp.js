@@ -1,23 +1,78 @@
 //jshint esversion:9
-import React from "react";
-import logo from "./../../images/SNOWWHITE LMIS-2 copy.png";
+import React, { useState } from "react";
+import axios from "axios";
+import { redirect } from "react-router-dom";
 
 export default function SignUp() {
+	const [signupForm, setSignupForm] = useState({
+		firstname: "",
+		lastname: "",
+		gender: "",
+		profession: "",
+		email: "",
+		password: "",
+		confirmPassword: "",
+	});
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setSignupForm({
+			...signupForm,
+			[name]: value,
+		});
+	};
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		e.target.reset();
+		console.log(signupForm);
+
+		await axios
+			.post("https://apimocha.com/lmis/userSignup", signupForm, {
+				headers: {
+					"content-Type": "application/json",
+					data: signupForm,
+				},
+			})
+			.then((res) => {
+				console.log(res);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
 	return (
 		<div className="sign-up">
 			<div className="signup-text">
 				<p>Get Accurate,Precise and Update info about Labour force</p>
 			</div>
-			<form className="form-login">
+			<form
+				className="form-login"
+				method="POST"
+				action="/"
+				onSubmit={() => {
+					if (signupForm.password === signupForm.confirmPassword) {
+						handleSubmit();
+					}
+				}}>
 				<div className="inputs">
 					<h2>Sign up to LMIS</h2>
 					<div>
 						<label htmlFor="firstname">First name</label>
-						<input type="text" name="firstname" className="login-inp" />
+						<input
+							type="text"
+							name="firstname"
+							className="login-inp"
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="lastname">Last name</label>
-						<input name="lastname" type="text" className="login-inp" />
+						<input
+							name="lastname"
+							type="text"
+							className="login-inp"
+							onChange={handleChange}
+						/>
 					</div>
 					<div style={{ margin: "1em 0" }}>
 						<label
@@ -41,15 +96,30 @@ export default function SignUp() {
 					</div>
 					<div>
 						<label htmlFor="profession">profession</label>
-						<input name="profession" type="text" className="login-inp" />
+						<input
+							name="profession"
+							type="text"
+							className="login-inp"
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="email">Email</label>
-						<input name="email" type="email" className="login-inp" />
+						<input
+							name="email"
+							type="email"
+							className="login-inp"
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="password">Password</label>
-						<input name="password" type="password" className="login-inp" />
+						<input
+							name="password"
+							type="password"
+							className="login-inp"
+							onChange={handleChange}
+						/>
 					</div>
 					<div>
 						<label htmlFor="confirmPassword">Confirm Password</label>
@@ -57,6 +127,7 @@ export default function SignUp() {
 							name="confirmPassword"
 							type="password"
 							className="login-inp"
+							onChange={handleChange}
 						/>
 					</div>
 					<button type="submit">Submit</button>

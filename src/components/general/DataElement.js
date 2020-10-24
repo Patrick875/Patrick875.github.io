@@ -8,14 +8,14 @@ export default function DataElement({ title, children }) {
 	const contentRef = useRef(null);
 	useEffect(() => {
 		contentRef.current.style.maxHeight = active
-			? `${contentRef.current.scrollHeight}px`
+			? `${contentRef.current.scrollHeight + 20}px`
 			: "0px";
 	}, [contentRef, active]);
 
 	const toggleAccordion = () => {
 		setActive(!active);
 	};
-
+	console.log(children);
 	return (
 		<div className="accordion_section">
 			<div className={`accordion `} onClick={toggleAccordion}>

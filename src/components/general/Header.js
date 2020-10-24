@@ -2,7 +2,8 @@
 import React from "react";
 import logo from "./../../images/SNOWWHITE LMIS copy.png";
 import { Link } from "react-router-dom";
-export default function () {
+import axios from "axios";
+export default function Header() {
 	return (
 		<div className="header">
 			<div className="header_top">

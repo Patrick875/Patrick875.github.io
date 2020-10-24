@@ -1,3 +1,20 @@
+// Lbindicators is getting data from th redux store, which is then passing as props
+// to KeyLabour Component.
+
+// Since Each Keylabour component is receving an object of data that it will use to
+// create an Accordion,the data will be destructed further once inside keylabour and
+// passed to each DataElement component making up the keylabour component.
+
+// Once inside the DataElement we have an event on the readmore link that will display
+// a graph from data received by the element.
+
+// The graph will be displayed in the graphSection component. The App will constantly
+// check if the graph sction has children once it has no children the div will close
+// and return to the normal View.
+
+
+
+
 ------------RESOURCES USING MATERIAL UI TABS--------------------
 
 //jshint esversion:9

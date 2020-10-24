@@ -38,6 +38,7 @@ function Carosel1() {
 			infinite={true}
 			autoPlay={true}
 			autoPlaySpeed={3000}
+			className="carousel-item"
 			removeArrowOnDeviceType={["tablet", "mobile"]}>
 			{legendData.titles.map((el, elI) => (
 				<CarouselItem

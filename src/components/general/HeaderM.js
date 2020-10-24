@@ -46,6 +46,11 @@ const navLinks = [
 	{ title: `Log In`, path: "/login" },
 	{ title: `Sign up`, path: "/signup" },
 ];
+const [navLinksLogedIn] = [
+	{ title: `HOME`, path: `/` },
+	{ title: `LABOUR MARKET INDICATORS`, path: `/labour-market-indicators` },
+	{ title: `RESOURCES`, path: `/resources` },
+];
 const HeaderM = () => {
 	const classes = useStyles();
 

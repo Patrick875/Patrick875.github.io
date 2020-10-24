@@ -8,6 +8,7 @@ function HomeLabourIndicDescr(props) {
 			<Link to={`/${props.data.link}`}>
 				<h2>{props.data.title}</h2>
 			</Link>
+
 			<img
 				src={`${props.imgData.src}`}
 				alt={`${props.imgData.alt}`}

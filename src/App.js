@@ -13,7 +13,7 @@ import withSizes from "react-sizes";
 
 function App({ isMobile }) {
 	return (
-		<div className="App">
+		<div className="App ">
 			<Router>
 				{isMobile ? <HeaderM /> : <Header />}
 				<Switch>

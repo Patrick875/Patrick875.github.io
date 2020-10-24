@@ -20,6 +20,12 @@ import HomeLabourIndicDescr from "./../general/Home_labour_indic_descr";
 
 export default function Home(props) {
 	const data = {
+		topDescription: {
+			title: "Labour Market Indicators",
+			description:
+				"Labour Market Indicators are a set of key factors based on which the status of labor is accessed",
+			link: "/labour-market-indicators",
+		},
 		titles: [
 			"Labour Force Statistics",
 			"Employment Statistics",
