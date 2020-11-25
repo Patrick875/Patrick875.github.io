@@ -1,7 +1,7 @@
 //jshint esversion:9
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App-b.css";
+import "./App.css";
 import Home from "./components/pages/Home";
 import Header from "./components/general/Header";
 import HeaderM from "./components/general/HeaderM";

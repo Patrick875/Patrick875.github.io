@@ -1,12 +1,13 @@
 //jshint esversion:9
 import React from "react";
-import logo from "./../../images/SNOWWHITE LMIS copy.png";
+import logo from "./../../images/Group 69.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import svg from "./../../images/Group 65.svg";
 export default function Header() {
 	return (
 		<div className="header">
-			<div className="header_top">
+			<nav className="header_nav">
 				<div className="header_top_logo">
 					<Link to="/">
 						<img src={logo} height="120" width="120" alt="LMIS LOGO" />
@@ -15,41 +16,25 @@ export default function Header() {
 				<div className="header_top_links">
 					<ul>
 						<Link to="/login">
-							<li>LOGIN</li>
+							<li>Home</li>
 						</Link>
 						<Link to="/signup">
-							<li>SIGNUP</li>
+							<li>Labour Market Indicators</li>
 						</Link>
-						<li>
-							<select name="cars" id="cars" style={{ border: "none" }}>
-								<option value="english">English</option>
-								<option value="french">French</option>
-							</select>
-						</li>
+						<Link>
+							<li>Resources</li>
+						</Link>
+						<Link>
+							<li>About LMis</li>
+						</Link>
 					</ul>
 				</div>
-			</div>
-			<div className="header_bottom">
-				<div className="header_bottom_links">
-					<ul>
-						<li>
-							<Link to="/" className="link">
-								HOME
-							</Link>
-						</li>
-						<li>
-							<Link to="/labour-market-indicators" className="link">
-								LABOUR MARKET INDICATORS
-							</Link>
-						</li>
-						<li>
-							<Link to="/resources" className="link">
-								RESOURCES
-							</Link>
-						</li>
-					</ul>
+				<div className="header-top_login">
+					<button className="language">en</button>
+					<button>Login</button>
+					<button>Sign in</button>
 				</div>
-			</div>
+			</nav>
 		</div>
 	);
 }
